@@ -174,15 +174,16 @@ public class UIInventory : MonoBehaviour
         {
             for (int i = 0; i < selectedItem.consumables.Length; i++)
             {
-                switch(selectedItem.consumables[i].consumableType)
-                {
-                    case ConsumableType.Health : 
-                        status.Heal(selectedItem.consumables[i].value);
-                        break;
-                    case ConsumableType.Hunger :
-                        status.Eat(selectedItem.consumables[i].value);
-                        break;
-                }
+                status.RecoverStat(selectedItem.consumables[i].consumableType, selectedItem.consumables[i].value);
+                // switch(selectedItem.consumables[i].consumableType)
+                // {
+                //     case ConsumableType.Health : 
+                //         status.Heal(selectedItem.consumables[i].value);
+                //         break;
+                //     case ConsumableType.Hunger :
+                //         status.Eat(selectedItem.consumables[i].value);
+                //         break;
+                // }
             }
 
             RemoveSelectedItem();

@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+
 public class Player : MonoBehaviour
 {
     
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour
         inputController = GetComponent<PlayerInputController>();
         status = GetComponent<PlayerStatus>();
         interaction = GetComponent<PlayerInteraction>();
+        equip = GetComponent<Equipment>();
 
         rigidBody = GetComponent<Rigidbody>();
     }
