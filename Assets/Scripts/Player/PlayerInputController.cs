@@ -7,6 +7,7 @@ public class PlayerInputController : MonoBehaviour
     public event Action<Vector2> OnMoveEvent;
     public event Action OnJumpEvent;
     public event Action<Vector2> OnLookEvent;
+    public event Action OnAttackEvent;
     public event Action OnMagicEvent;
     public event Action OnInteractEvent;
     public event Action OnToggleInventoryEvent;
@@ -37,6 +38,11 @@ public class PlayerInputController : MonoBehaviour
     {
         if(context.started)
             OnMagicEvent?.Invoke();
+    }
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if(context.started)
+            OnAttackEvent?.Invoke();
     }
 
     public void OnInteract(InputAction.CallbackContext context)

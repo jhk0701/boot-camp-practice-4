@@ -17,7 +17,7 @@ public enum ConsumableType
 [Serializable]
 public class ItemDataConsumable
 {
-    public ConsumableType consumableType;
+    public StatType consumableType;
     public float value;
 }
 

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa087d07a33cd044e9c02a1ebbdf3dc7, type: 3}
-  m_Name: Item Wood
+  m_Name: Item Magic Sword
   m_EditorClassIdentifier: 
   id: 0
-  title: "\uB098\uBB34"
-  description: "\uB098\uBB34\uC5D0\uC11C \uCC44\uCDE8\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
-  type: 0
-  icon: {fileID: 21300000, guid: a5612e17f7779374da8564e7a11d823c, type: 3}
-  canStack: 1
+  title: "\uB9C8\uBC95 \uCE7C"
+  description: "\uB9C8\uBC95 \uCE7C\uC785\uB2C8\uB2E4."
+  type: 1
+  icon: {fileID: 21300000, guid: 4f2f320a217307a48a107491b1d17ebb, type: 3}
+  canStack: 0
   maxStackAmount: 12
   consumables: []
-  dropPrefab: {fileID: 9205139826289074602, guid: 74dcdf25ec9862448bc2baa6dc7138a7, type: 3}
-  equipPrefab: {fileID: 0}
+  dropPrefab: {fileID: 2380639907588117680, guid: 12a03049912a8f6489d6e88ca57eed8e, type: 3}
+  equipPrefab: {fileID: 7436548864004820093, guid: e092af35f107d0a4f9a1b27aac3b3baa, type: 3}

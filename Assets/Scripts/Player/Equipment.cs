@@ -13,6 +13,9 @@ public class Equipment : MonoBehaviour
     {
         view = GetComponent<PlayerView>();
         status = GetComponent<PlayerStatus>();
+
+        Player p = GetComponent<Player>();
+        p.inputController.OnAttackEvent += Attack;
     }
 
     public void EquipNew(ItemData data)
@@ -29,7 +32,6 @@ public class Equipment : MonoBehaviour
             curEquip = null;
         }
     }
-
     
 
     public void OnAttackInput(InputAction.CallbackContext context)
@@ -37,6 +39,14 @@ public class Equipment : MonoBehaviour
         if (context.phase == InputActionPhase.Performed && 
             curEquip != null &&
             view.cursorIsLocked)
+        {
+            curEquip.OnAttackInput();   
+        }
+    }
+
+    public void Attack()
+    {
+        if (curEquip != null && view.cursorIsLocked)
         {
             curEquip.OnAttackInput();   
         }
