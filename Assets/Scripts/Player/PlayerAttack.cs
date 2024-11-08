@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    PlayerStatus status;    
+    PlayerCondition condition;    
 
     [SerializeField] Projectile magicBall;
     [SerializeField] float manaUsageOfMagicBall = 10f;
 
     void Start()
     {
-        status = CharacterManager.Instance.Player.status;
+        condition = CharacterManager.Instance.Player.condition;
 
         PlayerInputController inputController = CharacterManager.Instance.Player.inputController;
         inputController.OnMagicEvent += MagicAttack;
@@ -18,7 +18,7 @@ public class PlayerAttack : MonoBehaviour
 
     void MagicAttack()
     {
-        if (status.UseMana(manaUsageOfMagicBall))
+        if (condition.UseMana(manaUsageOfMagicBall))
         {
             Projectile p = Instantiate(magicBall, transform.position + Vector3.up + transform.forward * 0.5f, Quaternion.identity);
             p.Fire(transform.forward);

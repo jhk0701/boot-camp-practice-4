@@ -1,9 +1,12 @@
 using System;
 using UnityEngine;
 
-public class PlayerStat : MonoBehaviour
+[Serializable]
+public class Stat
 {
     public StatType type;
+    public float maxValue = 100f;
+    float minValue = 0f;
     
     float _value;
     public float Value 
@@ -16,15 +19,7 @@ public class PlayerStat : MonoBehaviour
         }
     }
 
-    [SerializeField] float maxValue = 100f;
-    [SerializeField] float minValue = 0f;
-
     public event Action<float> OnValueChanged;
-
-    void Start()
-    {
-        Value = maxValue;
-    }
 
     public void Add(float amount)
     {

@@ -9,14 +9,10 @@ public enum StatType
     Mana,
 }
 
-public class PlayerStatus : MonoBehaviour, IDamagable
+public class PlayerCondition : MonoBehaviour, IDamagable
 {
-    public Dictionary<StatType, PlayerStat> stats = new Dictionary<StatType, PlayerStat>();
-    [SerializeField] PlayerStat[] playerStats;
-
-    // public PlayerStat health;    
-    // public PlayerStat stamina;
-    // public PlayerStat mana;
+    [SerializeField] Stat[] playerStats;
+    public Dictionary<StatType, Stat> stats = new Dictionary<StatType, Stat>();
 
     [SerializeField] float manaRecoverAmount = 1f;
 
@@ -25,7 +21,6 @@ public class PlayerStatus : MonoBehaviour, IDamagable
 
     void Awake()
     {
-        // 맵핑
         for (int i = 0; i < playerStats.Length; i++)
         {
             stats.Add(playerStats[i].type, playerStats[i]);

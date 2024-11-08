@@ -23,12 +23,12 @@ public class UIInventory : MonoBehaviour
     int curEquipIndex;
 
     
-    PlayerStatus status;
+    PlayerCondition condition;
 
 
     void Start()
     {
-        status = CharacterManager.Instance.Player.status;
+        condition = CharacterManager.Instance.Player.condition;
 
         CharacterManager.Instance.Player.inputController.OnToggleInventoryEvent += Toggle;
         CharacterManager.Instance.Player.AddItem += AddItem;
@@ -174,7 +174,7 @@ public class UIInventory : MonoBehaviour
         {
             for (int i = 0; i < selectedItem.consumables.Length; i++)
             {
-                status.RecoverStat(selectedItem.consumables[i].consumableType, selectedItem.consumables[i].value);
+                condition.RecoverStat(selectedItem.consumables[i].consumableType, selectedItem.consumables[i].value);
                 // switch(selectedItem.consumables[i].consumableType)
                 // {
                 //     case ConsumableType.Health : 

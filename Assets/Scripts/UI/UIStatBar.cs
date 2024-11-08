@@ -5,16 +5,17 @@ using UnityEngine.UI;
 public class UIStatBar : MonoBehaviour
 {
     [SerializeField] Image bar;
-    PlayerStat stat;
+    [SerializeField] StatType type;
 
     void Start()
     {
-        stat = GetComponent<PlayerStat>();
+        PlayerCondition condition = CharacterManager.Instance.Player.condition;
         
-        if(stat == null)
-            Destroy(gameObject);
-        else
+        if (condition.stats.TryGetValue(type, out Stat stat))
             stat.OnValueChanged += ChangeBar;
+        else
+            Destroy(gameObject);
+            
     }
 
     void ChangeBar(float val)

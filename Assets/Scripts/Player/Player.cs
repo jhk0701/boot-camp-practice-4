@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     
     [HideInInspector] public PlayerInputController inputController;
-    [HideInInspector] public PlayerStatus status;
+    [HideInInspector] public PlayerCondition condition;
     [HideInInspector] public PlayerInteraction interaction;
     [HideInInspector] public Rigidbody rigidBody;
     [HideInInspector] public Equipment equip;
@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
         CharacterManager.Instance.Player = this;
 
         inputController = GetComponent<PlayerInputController>();
-        status = GetComponent<PlayerStatus>();
+        condition = GetComponent<PlayerCondition>();
         interaction = GetComponent<PlayerInteraction>();
         equip = GetComponent<Equipment>();
 

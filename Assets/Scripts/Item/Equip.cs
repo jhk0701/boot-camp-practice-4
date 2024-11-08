@@ -34,13 +34,13 @@ public class Equip : MonoBehaviour
         {
             for (int i = 0; i < statusUsages.Length; i++)
             {
-                if (!CharacterManager.Instance.Player.status.IsUsable(statusUsages[i].type, statusUsages[i].usage))
+                if (!CharacterManager.Instance.Player.condition.IsUsable(statusUsages[i].type, statusUsages[i].usage))
                     return;
             }
 
             for (int i = 0; i < statusUsages.Length; i++)
             {
-                CharacterManager.Instance.Player.status.UseStat(statusUsages[i].type, statusUsages[i].usage);
+                CharacterManager.Instance.Player.condition.UseStat(statusUsages[i].type, statusUsages[i].usage);
             }
 
             isAttacking = true;

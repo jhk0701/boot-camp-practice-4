@@ -7,12 +7,12 @@ public class Equipment : MonoBehaviour
     public Transform equipParent;
 
     PlayerView view;
-    PlayerStatus status;
+    PlayerCondition condition;
 
     void Start()
     {
         view = GetComponent<PlayerView>();
-        status = GetComponent<PlayerStatus>();
+        condition = GetComponent<PlayerCondition>();
 
         Player p = GetComponent<Player>();
         p.inputController.OnAttackEvent += Attack;
